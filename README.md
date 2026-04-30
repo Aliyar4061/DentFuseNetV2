@@ -123,3 +123,40 @@ Clone the repository and install dependencies:
 git clone https://github.com/Aliyar4061/DentFuseNet.git
 cd DentFuseNet
 pip install -r requirements.txt
+
+
+DentFuseNet/
+├── colab_training.py          # Complete training & evaluation pipeline
+├── colab_setup.ipynb          # Step‑by‑step Colab notebook
+├── train.py                   # Minimal training example
+├── evaluate.py                # Bootstrapped evaluation script
+├── requirements.txt           # Python dependencies
+├── .gitignore
+├── LICENSE (MIT)
+├── configs/
+│   └── dental_config.yaml     # Hyperparameters (image size, batch, LR, etc.)
+├── models/
+│   ├── __init__.py
+│   ├── custom_model.py        # CustomModel with CBAM, classifier head
+│   ├── cbam.py                # CBAM attention module
+│   └── losses.py              # CompoundLoss (focal + weighted CE)
+├── preprocessing/
+│   ├── dataset.py             # MedicalDataset, augmentations
+│   └── transforms.py          # Albumentations pipelines
+├── utils/
+│   ├── metrics.py             # Bootstrapping, comprehensive metrics
+│   ├── visualization.py       # Grad‑CAM, t‑SNE, confusion matrices
+│   └── reproducibility.py     # Seed setting, deterministic flags
+├── notebooks/
+│   └── demo.ipynb             # Demonstration notebook
+├── docs/                      # Generated figures (Grad‑CAM, t‑SNE, etc.)
+└── weights/                   # Saved model checkpoints (optional)
+
+
+@article{abdian2026dentfusenet,
+  title={DentFuseNet: A Validation-Optimized Static Weighting Ensemble for Multi-Condition Dental Disease Classification and Oral Cancer Detection},
+  author={Ali Zeydi Abdian. Mohammad Masoud Javidi. Najme Mansouri},
+  journal={Information Science},
+  year={2026},
+  publisher={Elsevier}
+}
